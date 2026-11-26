@@ -189,14 +189,13 @@ async function sendMessage() {
    if (!response.ok) {
   throw new Error(data.detail || data.error || "Error de conexión");
    } 
-    
-  
 
     answer.textContent = data.reply || "No recibí respuesta.";
 
-  } catch (error) {
-    answer.textContent = "No pude conectarme. Inténtalo de nuevo.";
+} catch (error) {
+  respuesta.textContent = error.message;
   }
+
 
   chat.scrollIntoView({ behavior: "smooth", block: "end" });
 }

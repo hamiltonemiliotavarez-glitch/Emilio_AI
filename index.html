@@ -186,9 +186,11 @@ async function sendMessage() {
 
     const data = await response.json();
 
-    if (!response.ok) {
+   if (!response.ok) {
   throw new Error(data.detail || data.error || "Error de conexión");
-    }
+   } 
+    
+  
 
     answer.textContent = data.reply || "No recibí respuesta.";
 
